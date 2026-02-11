@@ -195,6 +195,7 @@ function App() {
   const checkLevel10 = () => inputs[10].trim() === "9" ? completeLevel(10, 5) : (setErrors(prev => ({ ...prev, 10: true })), recordFailedAttempt(10), setSubmittedLevels(prev => ({ ...prev, 10: true })), checkEndGame());
 
   // --- TERMINAL ---
+  // eslint-disable-next-line no-unused-vars
   const handleTerminalSubmit = (e) => {
     if (e.key === 'Enter') {
       const cmd = termInput.trim().toLowerCase();
@@ -310,7 +311,7 @@ function App() {
             {openWindowId && (
               <div className="window">
                 <div className="window-header">
-                  <span>SEAL_{openWindowId < 10 ? '0'+openWindowId : openWindowId} // ACCESS</span>
+                  <span>SEAL_{openWindowId < 10 ? '0'+openWindowId : openWindowId} {/*ACCESS*/} </span>
                   <span className="close-btn" onClick={() => setOpenWindowId(null)}>✕</span>
                 </div>
                 <div className="window-content">
